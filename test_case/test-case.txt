@@ -1,0 +1,63 @@
+Material API
+
+GET /api/material - Get all materials:
+Send a GET request to /api/material.
+Verify that the response status code is 200.
+Verify that the response body contains an object of materials.
+Verify if there is an server error status code 500 is return
+
+
+GET /api/material/:id - Get a only a material by its ID:
+Enter an existing material ID and send a GET request to /api/material/:id e.g. "/api/material/1" or "/api/material/5".
+Verify that the response status code is 200.
+Verify that the response body contains the material object with the specified ID.
+Enter an invalid material ID and send a GET request.
+Verify that the response status code is 404.
+
+PUT /api/material/:id - Update a material by its ID:
+Choose an existing material ID and send a PUT request to /api/material/:id e.g. "/api/material/1" or "/api/material/5".
+Use a JSON payload with test values to updated material data (e.g., {"power_level": 155, "qty": 85,"deleted_at": null}).
+Verify that the response status code is 200.
+Verify that the response body contains the updated material object.
+Choose an invalid material ID and send a PUT request and verify that the response status code is 404.
+
+DELETE /api/material/:id - Delete a material by its ID:
+Choose an existing material ID and send a DELETE request to /api/materials/:id e.g. "/api/material/1" or "/api/material/5" and Verify that the response status code is 200.
+***Verify that the response body does not contains the deleted material object.
+***Choose an invalid material ID and send a DELETE request.
+Verify that the response status code is 404.
+
+Weapons API
+
+GET /api/weapon - Get all weapons:
+Send a GET request to /api/weapon.
+Verify that the response status code is 200.
+Verify that the response body contains an array of weapons.
+
+
+GET /api/weapon/:id - Get a only one weapon by its ID:
+Choose an existing weapon ID and send a GET request to /api/weapon/:id e.g. "/api/weapon/1" or "/api/weapon/3".
+Verify that the response status code is 200.
+Verify that the response body contains the weapon object with the specified ID.
+Enter an invalid weapon ID and send a GET request. Verify that the response status code is 404.
+
+Composition API
+
+POST /api/material/:parentId/composition - Post a new composition:
+---Send a POST request to /composition with a JSON payload containing composition data (e.g., { "material_id": 1, "qty": 50 } and { "material_id": 9, "qty": 25 }).Verify that the response status code is 200.
+---Verify that the response body contains the newly created composition object.
+???TEST - Verify if there is an server error status code 500 is return ---- might need to delete
+
+PUT /api/material/:parentId/composition/:materialId - Update a material by its ID:
+---Enter an existing parent and material ID and send a PUT request to /api/material/:parentId/composition/:materialId e.g "/api/material/1/composition/3" or "/api/material/3/composition/3". Use a JSON payload with updated composition data (e.g., { "material_id": 1, "qty": 50 }).
+Verify that the response status code is 200.
+---Verify that the response body contains the updated composition object.
+---Enter an invalid parent and material ID and send a PUT request.
+---Verify that the response status code is 404.
+
+
+DELETE /api/material/:parentId/composition/:materialId - Delete a material by its ID:
+Enter an existing parent and material ID and send a DELETE request to /api/material/:parentId/composition/:materialId e.g "/api/material/3/composition/7". Verify that the response status code is 200.
+---Verify that the response body contains the deleted composition object.
+---Enter an invalid composition ID and send a DELETE request.
+---Verify that the response status code is 404.

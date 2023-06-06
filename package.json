@@ -7,13 +7,18 @@
     "start": "node index.js",
     "migrate": "npx knex migrate:latest",
     "rollback": "npx knex migrate:rollback --all",
-    "seed": "npx knex seed:run"
+    "seed": "npx knex seed:run",
+    "test": "jest --watchAll"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^11.0.0",
     "express": "^4.17.2",
-    "knex": "^0.95.15",
+    "knex": "^2.4.2",
     "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
   }
 }

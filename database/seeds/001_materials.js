@@ -3,95 +3,95 @@
  */
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('materials')
+  return knex("materials")
     .del()
     .then(function () {
       // Inserts seed entries
-      return knex('materials').insert([
+      return knex("materials").insert([
         {
           id: 1,
-          name: 'Iron',
-          base_power: 100,
+          name: "Iron",
+          power_level: 100,
           qty: 50,
-          deleted_at: null
+          deleted_at: null,
         },
         {
           id: 2,
-          name: 'Steel',
-          base_power: 20,
+          name: "Steel",
+          power_level: 20,
           qty: 1,
-          deleted_at: null
+          deleted_at: null,
         },
         {
           id: 3,
-          name: 'Bronze',
-          base_power: 60,
+          name: "Bronze",
+          power_level: 60,
           qty: 120,
-          deleted_at: null
+          deleted_at: null,
         },
         {
           id: 4,
-          name: 'Copper',
-          base_power: 10,
+          name: "Copper",
+          power_level: 10,
           qty: 70,
-          deleted_at: null
+          deleted_at: null,
         },
         {
           id: 5,
-          name: 'Wood',
-          base_power: 30,
+          name: "Wood",
+          power_level: 30,
           qty: 30,
-          deleted_at: null
+          deleted_at: null,
         },
         {
           id: 6,
-          name: 'Leather',
-          base_power: 80,
+          name: "Leather",
+          power_level: 80,
           qty: 45,
-          deleted_at: null
+          deleted_at: null,
         },
         {
           id: 7,
-          name: 'Bone',
-          base_power: 50,
+          name: "Bone",
+          power_level: 50,
           qty: 150,
-          deleted_at: null
+          deleted_at: null,
         },
         {
           id: 8,
-          name: 'Horn',
-          base_power: 150,
+          name: "Horn",
+          power_level: 150,
           qty: 80,
-          deleted_at: null
+          deleted_at: null,
         },
         {
           id: 9,
-          name: 'Flint',
-          base_power: 90,
+          name: "Flint",
+          power_level: 90,
           qty: 25,
-          deleted_at: null
+          deleted_at: null,
         },
         {
           id: 10,
-          name: 'Obsidian',
-          base_power: 130,
+          name: "Obsidian",
+          power_level: 130,
           qty: 100,
-          deleted_at: null
+          deleted_at: null,
         },
         {
           id: 11,
-          name: 'Brass',
-          base_power: 220,
+          name: "Brass",
+          power_level: 220,
           qty: 110,
-          deleted_at: null
+          deleted_at: null,
         },
         {
           id: 12,
-          name: 'Silver',
-          base_power: 300,
+          name: "Silver",
+          power_level: 300,
           qty: 120,
-          deleted_at: null
-        }
+          deleted_at: null,
+        },
       ]);
     });
 };

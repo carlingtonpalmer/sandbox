@@ -1,0 +1,40 @@
+const request = require("supertest");
+const express = require("express");
+const compositionsRouter = require("../routes/compositionsRouter.js");
+
+const app = express();
+app.use(express.json());
+app.use("/", compositionsRouter);
+
+describe("POST request/", () => {
+  it("TEST/ should return 500 status if request is invalid", async () => {
+    const response = await request(app).post("/1/composition");
+    expect(response.status).toBe(500);
+    expect(response.body).toHaveProperty(
+      "message",
+      `Unexpected error in Composition.get`
+    );
+  });
+});
+
+describe("PUT request ID ", () => {
+  it("TEST/ should return 500 status if request is invalid", async () => {
+    const response = await request(app).put("/1/composition/1");
+    expect(response.status).toBe(500);
+    expect(response.body).toHaveProperty(
+      "message",
+      `Unexpected error in Composition.get`
+    );
+  });
+});
+
+describe("DELETE request /api/material/", () => {
+  it("TEST/ should return 500 status if request is invalid", async () => {
+    const response = await request(app).put("/1/composition/1");
+    expect(response.status).toBe(500);
+    expect(response.body).toHaveProperty(
+      "message",
+      `Unexpected error in Composition.get`
+    );
+  });
+});
